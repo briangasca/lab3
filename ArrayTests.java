@@ -23,4 +23,14 @@ public class ArrayTests {
     int[] input1 = { };
     assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
   }
+
+  @Test
+  public void testAverageWithoutLowest() {
+    double[] input = {1,2,3,4,5,6};
+    double expected = (2+3+4+5+6) / input.length - 1;
+
+    double returned = ArrayExamples.averageWithoutLowest(input);
+
+    assertEquals(Double.valueOf(expected), Double.valueOf(returned));
+  }
 }
